@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CosmiCo | Contact Us</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/x-icon" href="/Icon/CosIcon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/Icon/CosIcon.ico">
+
+<link rel="preload" href="/Icon/CosIcon.ico" as="image">
+<link rel="icon" href="/Icon/CosIcon.ico" type="image/x-icon">
+
+<link rel="preload" href="/fonts/CosmiCo.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+
+@font-face {
+    font-family: 'CosmiCo';
+    src: url('/font/CosmiCo2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+html, body {
+    width: 100%;
+    font-family: 'CosmiCo', Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    height: 80px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.hamburger {
+    display: none; /* hide by default */
+}
+
+/* Mobile Hamburger & Slide Menu */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* show only on mobile */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 2010;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+    }
+}
+
+.logo-container {
+    position: absolute;
+    top: -25px;
+    left: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container .navbar-brand img {
+    height: 130px;
+    width: 130px;
+}
+
+.links-container {
+    position: absolute;
+    top: 0;
+    right: 150px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.links-container .navbar-nav .nav-link {
+    font-family: 'CosmiCo', Arial, sans-serif;
+    color: #3D1056;
+    font-size: 1.2em;
+    line-height: 80px; 
+    padding: 0 15px;
+    position: relative;
+    margin-left: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+/* Desktop arrow for TEAMS */
+.nav-item.dropdown .nav-link::after {
+    content: " ▼";
+    font-size: 0.7em;
+    margin-left: 5px;
+}
+
+/* Hide arrow on mobile */
+@media (max-width: 768px) {
+    .nav-item.dropdown .nav-link::after {
+        content: ""; /* remove desktop arrow */
+        margin-left: 0;
+    }
+}
+
+.navbar-nav .dropdown-toggle::after { display: none; }
+
+.links-container .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background-color: #3D1056;
+    transition: width 0.5s ease;
+}
+
+/* Disable desktop underline effect on mobile */
+@media (max-width: 768px) {
+    .links-container .navbar-nav .nav-link::after {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+}
+
+.links-container .navbar-nav .nav-item:hover > .nav-link::after { width: 100%; }
+
+.nav-item.dropdown { position: relative; }
+
+.nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    top: 79px;
+    left: 19px;
+    z-index: 2000;
+    pointer-events: auto;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    min-width: 500px;
+    max-width: 600px;
+    transition: all 0.3s ease;
+    border-radius: 0 !important;
+}
+
+.dropdown-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 0 !important;
+    overflow: hidden;
+}
+
+.dropdown-grid .team {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    background-color: #f8f8f8;
+    text-align: left;
+    width: 100%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-grid .team::before,
+.dropdown-grid .team::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-grid .team::before { top: 0; }
+.dropdown-grid .team::after { bottom: 0; }
+
+.dropdown-grid .team:hover {
+    background-color: #e6e6e6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown-grid .team:hover::before,
+.dropdown-grid .team:hover::after { background-color: #444; }
+
+.team-header { display: flex; align-items: center; margin-bottom: 5px; }
+
+.teams-dropdown .dropdown-menu::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 100px;
+    height: 4px;
+    width: calc(100% - 100px);
+    background-color: #3D1056;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.teams-dropdown:hover .dropdown-menu::before { transform: scaleX(1); }
+
+.team-header .logo-wrapper {
+    background-color: #0F0F0F;
+    width: 40px;              
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;       
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.team-header .logo-wrapper img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.team-header h5 {
+    font-family: 'CosmiCo', Arial, sans-serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin: 0;
+}
+
+.team p { font-size: 11px; margin-left: 0; color: #333; text-decoration: none; }
+
+h1 { font-size: 60px; margin-bottom: 20px; }
+p { font-size: 24px; }
+
+/* ===== Mobile Hamburger & Slide Menu ===== */
+@media (max-width: 768px) {
+
+    /* Hamburger Icon - right of logo */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 2010;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+    }
+
+    .hamburger span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #3D1056;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Transform into proper X when active */
+    .hamburger.active {
+        right: calc(15px + 170px); /* move 50px left */
+    }
+
+    .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin-top: -1.5px; /* half of the bar height to center vertically */
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin-top: -1.5px; /* center vertically */
+}
+
+    /* Slide-in menu - full height */
+    .links-container {
+        position: fixed;
+        top: 0;
+        right: -60%;
+        width: 60%;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 80px;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        transition: right 0.4s ease;
+        z-index: 2000;
+    }
+
+    .links-container.active { right: 0; }
+
+    .links-container .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .links-container .nav-item { width: 100%; }
+
+    .links-container .nav-link {
+        display: flex; /* text + toggle */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 1em;
+        color: #3D1056;
+        text-decoration: none; /* removed underlines */
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+        background-color: #fff;
+        box-sizing: border-box;
+    }
+
+    /* Teams dropdown - + / - toggle on right, text on left */
+    .teams-dropdown .desktop-dropdown { display: none !important; }
+
+    .teams-dropdown .dropdown-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background-color: #f9f9f9;
+        box-sizing: border-box;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease;
+    }
+
+    .teams-dropdown.active .dropdown-menu {
+        display: flex;
+        max-height: 500px;
+    }
+
+    /* + / - toggle on right of TEAMS link */
+    .teams-dropdown .nav-link::after {
+        content: '+';
+        font-weight: bold;
+        margin-left: auto;
+    }
+
+    .teams-dropdown.active .nav-link::after {
+        content: '-';
+    }
+
+    .team-name-only {
+        padding: 10px 30px;
+        font-size: 0.9em;
+        text-align: left;
+        color: #3D1056;
+        border-bottom: 1px solid #eee;
+        background-color: #f9f9f9;
+        cursor: pointer;
+        box-sizing: border-box;
+        text-decoration: none; /* remove underline */
+    }
+
+    /* Logo adjustments */
+    .logo-container {
+        position: relative !important;
+        top: 0 !important;
+        left: 10px !important;
+        display: flex;
+        margin: 0;
+        z-index: 2002;
+    }
+
+    .logo-container .navbar-brand img {
+        height: 60px;
+        width: 60px;
+    }
+}
+
+.site-footer {
+    position: relative;
+    height: 490px;
+    background-color: #0F0F0F;
+    font-family: 'CosmiCo', Arial, sans-serif;
+}
+
+.footer-text {
+    position: absolute;
+    top: 50px;
+    left: 185px;
+    color: #3D1056;
+    font-size: 20px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.footer-socials-container {
+    position: absolute;
+    top: 90px;
+    left: 185px;
+    display: flex;
+    gap: 45px;
+    z-index: 10;
+}
+
+.footer-socials-container a {
+    color: #ffffff;
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-socials-container a:hover {
+    transform: translateY(-3px);
+    color: #b4b4b4;
+}
+
+.footer-partners {
+    position: absolute;
+    top: 190px;
+    left: 185px;
+    color: #3D1056;
+    font-size: 18px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.partners-logos {
+    position: absolute;
+    top: 235px;
+    left: 180px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.partners-logos img {
+    height: 80px;
+    width: auto;
+}
+
+.partners-divider {
+    position: absolute;
+    top: 375px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1.4px;
+    background-color: #ccc;
+}
+
+.footer-info {
+    position: absolute;
+    top: 390px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    font-size: 14px;
+    color: #fff;
+}
+
+.footer-info-logo {
+    height: 90px;
+    width: 90px;
+}
+
+.footer-info-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    color: #ffffff;
+    margin: 0;
+    text-align: right;
+}
+
+.footer-info-text a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-info-text a:hover {
+    color: #ffffff;
+}
+
+.footer-info-text.right-text {
+    opacity: 0.25;
+}
+
+@media (max-width: 1024px) {
+    .site-footer {
+        height: auto;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-text,
+    .footer-partners,
+    .footer-info-text {
+        position: static;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .footer-socials-container {
+        position: static;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .partners-logos {
+        position: static;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin: 10px 0 20px 0;
+    }
+
+    .partners-logos img {
+        max-height: 60px;
+        width: auto;
+    }
+
+    .partners-divider {
+        position: static;
+        width: 80%;
+        margin: 20px auto;
+        transform: none;
+    }
+
+    .footer-info {
+        position: static;
+        transform: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .footer-info-logo {
+        margin-bottom: 10px;
+        height: 80px;
+        width: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-text { font-size: 18px; }
+    .footer-partners { font-size: 16px; }
+    .footer-info-text { font-size: 15px; }
+    .partners-logos img { max-height: 50px; }
+    .footer-socials-container a { font-size: 20px; }
+    .partners-logos { gap: 30px; }
+}
+
+@media (max-width: 480px) {
+    .footer-text { font-size: 16px; }
+    .footer-partners { font-size: 14px; }
+    .footer-info-text { font-size: 14px; }
+    .partners-logos { gap: 20px; }
+    .partners-logos img { max-height: 40px; }
+    .footer-socials-container { gap: 25px; }
+    .footer-info-logo { height: 70px; width: 70px; }
+}
+
+.contact-section {
+  padding: 60px 100px;
+  text-align: left;
+}
+
+.contact-title {
+  color: #3D1056;
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-family: 'CosmiCo', Arial, sans-serif;
+}
+
+.contact-form {
+  max-width: 600px;
+  position: relative;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #000;
+  width: 100%;
+  outline: none;
+  border-radius: 0;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.checkbox-wrapper {
+  position: absolute;
+  left: 0px;
+  top: 470px;
+  width: 100%;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin: 0;
+  transform: scale(1.2);
+}
+
+.checkbox-group label {
+  font-size: 13px;
+  color: #333;
+  margin: 0;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background-color: #3D1056;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-family: 'CosmiCo', Arial, sans-serif;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+  margin-top: 80px;
+}
+
+.submit-btn:hover {
+  background-color: #2a083d;
+}
+
+.contact-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+}
+
+.contact-divider {
+  width: 2px;
+  background-color: #ccc;
+  align-self: stretch;
+}
+
+.direct-contact {
+  flex: 0 0 250px;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+}
+
+.direct-contact h2 {
+  color: #3D1056;
+  font-family: 'CosmiCo', Arial, sans-serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.direct-contact p {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin: 12px 0;
+}
+
+.direct-contact i {
+  margin-right: 10px;
+  color: #3D1056;
+  font-size: 18px;
+}
+
+.direct-contact h3 {
+  font-size: 20px;
+  margin-top: 30px;
+  color: #3D1056;
+  font-family: 'CosmiCo', Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.direct-contact ul {
+  list-style: none;
+  padding-left: 0;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.direct-contact ul li {
+  margin-bottom: 5px;
+}
+
+.direct-contact p.response-time {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .contact-section {
+    padding: 40px 30px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contact-divider {
+    display: none;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .checkbox-wrapper {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .checkbox-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .checkbox-group label {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .submit-btn {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .direct-contact {
+    flex: unset;
+    text-align: center;
+  }
+
+  .contact-title,
+  .direct-contact h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .direct-contact p {
+    justify-content: center;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+
+  <div class="logo-container">
+    <a class="navbar-brand" href="index.html">
+      <img src="/Logos/CosmicoIconLOGO.webp" alt="Logo">
+    </a>
+  </div>
+
+  <!-- Hamburger button for mobile -->
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="links-container">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="About.html">ABOUT</a>
+      </li>
+
+      <li class="nav-item dropdown teams-dropdown">
+        <a class="nav-link" href="#" id="teamsDropdown">
+          TEAMS
+        </a>
+        <div class="dropdown-menu" aria-labelledby="teamsDropdown">
+          <div class="dropdown-grid">
+            <a href="Cosmain.html" class="team-name-only">CosmiCo RLCS</a>
+            <a href="CosSKZ.html" class="team-name-only">CosmiCo SKZ</a>
+            <a href="CosKYO.html" class="team-name-only">CosmiCo KYO</a>
+          </div>
+        </div>
+
+        <!-- Desktop version -->
+        <div class="dropdown-menu desktop-dropdown" aria-labelledby="teamsDropdown">
+          <div class="dropdown-grid">
+            <a href="Cosmain.html" style="text-decoration: none; color: inherit;">
+              <div class="team">
+                <div class="team-header">
+                  <div class="logo-wrapper">
+                    <img src="../Teams/RLCS.png" alt="Team 1 Logo">
+                  </div>
+                  <h5>CosmiCo RLCS</h5>
+                </div>
+                <p>Precision, Power, CosmiCo</p>
+              </div>
+            </a>
+
+            <div class="team" onclick="window.location.href='CosSKZ.html'">
+              <div class="team-header">
+                <div class="logo-wrapper">
+                  <img src="../Teams/RocketLeague.png" alt="Team 2 Logo">
+                </div>
+                <h5>CosmiCo SKZ</h5>
+              </div>
+              <p>Dominating the pitch with power and poise</p>
+            </div>
+
+            <div class="team" onclick="window.location.href='CosKYO.html'">
+              <div class="team-header">
+                <div class="logo-wrapper">
+                  <img src="../Teams/RocketLeague.png" alt="Team 3 Logo">
+                </div>
+                <h5>CosmiCo KYO</h5>
+              </div>
+              <p>Chasing victory, creating legends</p>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="Contact.html">CONTACT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="staff.html">STAFF</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+
+<section class="contact-section">
+  <h1 class="contact-title">Contact Us</h1>
+
+  <div class="contact-container">
+    <form id="contactForm" class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="topic">Choose a Topic</label>
+        <select id="topic" name="topic" required>
+          <option value="General Inquiry">General Inquiry</option>
+          <option value="Partnership">Partnership</option>
+          <option value="Merch Inquiry">Merch Inquiry</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Comments / Questions</label>
+        <textarea id="comments" name="comments" rows="5" required></textarea>
+      </div>
+
+      <div class="checkbox-wrapper">
+        <div class="checkbox-group">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">
+            I consent to the collection and handling of my information as described above.
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+
+    <div class="contact-divider"></div>
+
+    <div class="direct-contact">
+      <h2>Direct Contact</h2>
+      <p><i class="fa-solid fa-location-dot"></i> United States</p>
+      <p><i class="fa-solid fa-envelope"></i> cosmicoesportshr@gmail.com</p>
+
+  <h3 style="color:#3D1056; margin-top:36px; font-family:'CosmiCo', Arial, sans-serif;">Operating Hours</h3>
+  <ul style="list-style:none; padding-left:0; color:#333; font-size:14px; line-height:1.5;">
+    <li>Monday - Friday: 9am - 6pm</li>
+    <li>Saturday: 9am - 5pm</li>
+    <li>Sunday: 9am - 3pm</li>
+    <li>Holidays: CLOSED</li>
+  </ul>
+
+  <p style="margin-top:20px; font-size:14px; color:#555;">
+    We aim to respond to all inquiries within 24–48 hours.  
+    Your support keeps CosmiCo growing — thank you for reaching out!
+  </p>
+</div>
+
+    </div>
+  </div>
+</section>
+  
+<footer class="site-footer">
+  <h1 class="footer-text">#LetsGoCOS</h1>
+  
+  <div class="footer-socials-container">
+    <a href="https://www.twitch.tv/cosmico_official" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+    <a href="https://x.com/CosmiCoGG" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="https://www.youtube.com/@cosmicoesports" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://discord.gg/mgnCabjMbf" target="_blank"><i class="fa-brands fa-discord"></i></a>
+  </div>
+
+  <h2 class="footer-partners">CosmiCo Esports Partners</h2>
+<div class="partners-logos">
+    <img src="/Partners/SoarDogg.webp" alt="Partner 1 Logo">
+    <img src="/Partners/Empty.webp" alt="Partner 2 Logo">
+    <img src="/Partners/Empty.webp" alt="Partner 3 Logo">
+    <img src="/Partners/Empty.webp" alt="Partner 4 Logo">
+</div>
+
+<div class="partners-divider"></div>
+
+<div class="footer-info">
+  <img src="/Logos/CosmicoIcon.webp" alt="Footer Logo" class="footer-info-logo">
+  <p class="footer-info-text">
+    © CosmiCo Esports All Rights Reserved.
+  </p>
+  <div class="footer-info-right">
+  <p class="footer-info-text right-text">
+    Coded by Lucid ^-^
+  </p>
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = {
+    username: "Contact Form",
+    embeds: [{
+      title: "CosmiCo contact form submission",
+      color: 40046,
+      fields: [
+        { name: "First Name", value: document.getElementById("firstName").value, inline: true },
+        { name: "Last Name", value: document.getElementById("lastName").value, inline: true },
+        { name: "Email", value: document.getElementById("email").value },
+        { name: "Topic", value: document.getElementById("topic").value },
+        { name: "Comments", value: document.getElementById("comments").value }
+      ],
+      footer: { text: "CosmiCo Contact Form" }
+    }]
+  };
+
+  fetch("https://discord.com/api/webhooks/1413980254426497154/6hzLnDfr9eYIqySrnnrIDBQC_ZrkAXBLqfegjlJKXhBYv4sCfelBGahSCKsesp_HuFpQ", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(res => {
+    if (res.ok) {
+      alert("Your message has been sent!");
+      document.getElementById("contactForm").reset();
+    } else {
+      alert("Something went wrong. Try again.");
+    }
+  })
+  .catch(err => alert("Error: " + err));
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector('.hamburger');
+    const linksContainer = document.querySelector('.links-container');
+    const teamsDropdown = document.querySelector('.teams-dropdown');
+    const teamsLink = teamsDropdown.querySelector('.nav-link');
+    const dropdownMenu = teamsDropdown.querySelector('.dropdown-menu');
+
+    // Toggle main mobile navbar
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        linksContainer.classList.toggle('active');
+    });
+
+    // Toggle Teams dropdown on mobile only
+    teamsLink.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            e.preventDefault(); // prevent default link behavior
+            teamsDropdown.classList.toggle('active'); // toggle + / -
+            
+            if (teamsDropdown.classList.contains('active')) {
+                // open dropdown smoothly
+                dropdownMenu.style.maxHeight = dropdownMenu.scrollHeight + 'px';
+            } else {
+                // close dropdown
+                dropdownMenu.style.maxHeight = '0';
+            }
+        }
+    });
+
+    // Close mobile menus if resized to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            linksContainer.classList.remove('active');
+            hamburger.classList.remove('active');
+            teamsDropdown.classList.remove('active');
+            dropdownMenu.style.maxHeight = '0';
+        }
+    });
+});
+</script>
+
+</body>
+
+</html>
